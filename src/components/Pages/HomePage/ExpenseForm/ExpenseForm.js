@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './ExpenseForm.module.css';
 import { FaAngleDown,FaAngleRight} from 'react-icons/fa';
 
-const categories = ['patrol', 'food', 'bills payments', 'other expense'];
+const categories = ['petrol', 'food', 'bills payments', 'other expense'];
 
 const ExpenseForm = (props) => {
   const [money, setMoney] = useState('');
@@ -14,7 +14,7 @@ const ExpenseForm = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Send data to server or store locally
-    const obj = {id:Date.now(),amount:money,description:description, category:category,date:date }
+    const obj = {amount:money,description:description, category:category,date:date }
     props.onSubmit(obj)
     // console.log({ money, description, category, date });
     // Clear form inputs
